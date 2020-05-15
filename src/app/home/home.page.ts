@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProvidersService } from '../providers.service';
+
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  datos;
+  constructor(public proveedor :ProvidersService ) {
+    this.ionViewDidLoad();
+  }
 
-  constructor() {}
-
+  ionViewDidLoad(){
+    this.proveedor.obtenerDatos().then(data=>{
+      this.datos=data;
+      console.log(this.datos);
+    }).catch(data=>{
+      console.log(data);
+    })
+  }
 }

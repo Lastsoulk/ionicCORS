@@ -1,0 +1,7 @@
+{
+  "/":{
+    "target":"https://desa-pharmacys.avatar-global.com",
+    "secure":false,
+    "changeOrigin":true
+  }
+}
